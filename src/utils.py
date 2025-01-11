@@ -1,79 +1,3 @@
-topic_prompts = {
- 
-"non_technical": """
-You are given the content of the document, including text and images. The goal is to present this document to a non-technical audience who is primarily interested in the overall impact and value of the solution presented in the document. They are not familiar with technical terminology related to machine learning, natural language processing, or any other complex tasks.
-
-content: {{content}}
-
-Please generate up to 8-10 main topics or sections that highlight the key ideas and outcomes of the document, ensuring a natural flow for a presentation. Each topic should be supported by at least 5-6 uncommon lines of content from the document, ensuring that these lines are relevant to the topic and help provide a clear understanding of the idea being presented. Topics should be concise.
-Do not generate any content. Only generate the topics that have sufficient content.
-
-Format your response as a JSON object with the following structure:
-{
-  "topics": [
-    {
-      "title": "Topic Name",
-    },
-    ...
-  ]
-}
-""",
-
-"technical" : """
-You are given the content of the document, including text and images. The goal is to present this document to a technical audience who is interested in understanding the problem, the proposed solution, its impact, technical details, proofs, or results. They are familiar with technical methodologies used in the field.
-
-content: {{content}}
-
-Please generate up to 8-10 main topics or sections that highlight the key ideas and outcomes of the document, ensuring a natural flow for a presentation. Each topic should be supported by at least 5-6 uncommon lines of content from the document, ensuring that these lines are relevant to the topic and help provide a clear understanding of the idea being presented. Topics should be concise.
-Do not generate any content. Only generate the topics that have sufficient content.
-
-Format your response as a JSON object with the following structure:
-{
-  "topics": [
-    {
-      "title": "Topic Name",
-    },
-    ...
-  ]
-}
-"""
-}
-
-extract_prompts = {
-
-    "non_technical": """
-You are creating a slide deck for presenting to a non-technical audience who cares mostly about the overall impact of the solution approach in the document. They are not familiar with technical terminology related to machine learning, natural language processing, or any other complex tasks. In particular, you want to create slides for the following topics: {{list_of_topics}}. For each topic, choose the relevant sentences from the given content of the document. Each paragraph should be at least 3 lines long. Additionally, extract supporting details from the images, such as tables, graphs, or any scores, that are relevant to each topic. Ensure that the content for one topic does not overlap with another, and provide clear, understandable paragraphs that are easy for a non-technical audience to follow.
-If sufficient content is not available for a topic, that topic should not appear in the list.
-
-content: {{content}}
-
-Format your response as a JSON object with the following structure:
-
-{
-  "name_of_topic_1": "Paragraph summarizing the key points, extracted sentences, and relevant image-based data related to topic_1.",
-  "name_of_topic_2": "Paragraph summarizing the key points, extracted sentences, and relevant image-based data related to topic_2.",
-  ...
-}
-""",
-
-
-    "technical" : """
-You are creating a slide deck for presenting to a technical audience who wants to know the problem, solution, its impact, technical details, proofs, or results. They are familiar with technical methodologies used in the field. In particular, you want to create slides for the following topics: {{list_of_topics}}. For each topic, choose the relevant sentences from the given content of the document. Each paragraph should be at least 3 lines long. Additionally, extract supporting details from the images, such as tables, graphs, or any scores, that are relevant to each topic. Ensure that the content for one topic does not overlap with another, and provide clear, understandable paragraphs that are easy for a non-technical audience to follow.
-If sufficient content is not available for a topic, that topic should not appear in the list.
-
-content: {{content}}
-
-Format your response as a JSON object with the following structure:
-
-{
-  "name_of_topic_1": "Paragraph summarizing the key points, extracted sentences, and relevant image-based data related to topic_1.",
-  "name_of_topic_2": "Paragraph summarizing the key points, extracted sentences, and relevant image-based data related to topic_2.",
-  ...
-}
-"""
-}
-
-
 summarize_prompt = """
 You are given a slide topic and its corresponding summary. Please make the summary concise, breaking it into clear, short points that flow logically and are easy to read on a presentation slide. Try to provide the key information in 4-6 points. The summary should focus on clarity, brevity, and structure, ensuring it fits well on a slide.
 
@@ -135,7 +59,7 @@ Response:
 
 
 
-topic_prompts_llama = {
+topic_prompts = {
  
 "non_technical": """
 You are given the content of the document. The goal is to present this document to a non-technical audience who is primarily interested in the overall impact and value of the solution presented in the document. They are not familiar with technical terminology related to machine learning, natural language processing, or any other complex tasks.
@@ -180,7 +104,7 @@ Format your response as a JSON object with the following structure:
 """
 }
 
-extract_prompts_llama = {
+extract_prompts = {
 
     "non_technical": """
 You are creating a slide deck for presenting to a non-technical audience who cares mostly about the overall impact of the solution approach in the document. They are not familiar with technical terminology related to machine learning, natural language processing, or any other complex tasks. In particular, you want to create slides for the following topics: {{list_of_topics}}. For each topic, choose the relevant sentences from the given content of the document. Each paragraph should be at least 3 lines long. Ensure that the content for one topic does not overlap with another, and provide clear, understandable paragraphs that are easy for a non-technical audience to follow.

@@ -12,15 +12,15 @@ import argparse
 
 def get_llm_outputs(llm, prompts, image_payload = []):
     prompts1 = [[{"role": "user", "content": [{"type": "text", "text": prompt}] + image_payload}] 
-                for prompt in prompts1]
+                for prompt in prompts]
     responses = [llm.chat.completions.create(
-                model="hywaygpt4o", 
+                model="gpt4o", 
                 messages=prompt,
                 temperature=0,
                 max_tokens=8192,
-                ) for prompt in prompts]
+                ) for prompt in prompts1]
     results = [response.choices[0].message.content for response in responses]
-    return results
+    return results[0]
 
 
 
@@ -49,7 +49,7 @@ def get_output():
     argparser.add_argument("--audience_type", type=str, required=True, help="Technical or Non-Technical")
     argparser.add_argument("--model", type=str, default = "gpt-4o", help="Model Name")
     args = argparser.parse_args()
-    llm = init_llm(args.model)
+    llm = init_llm()
     with open(os.path.join(args.data_dir, "file.txt"), "r") as f:
         data = f.read()
     

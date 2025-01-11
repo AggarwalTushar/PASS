@@ -61,7 +61,7 @@ if __name__ == "__main__":
                         "type": "text",
                         "text": template.render(content = data)
                     }
-                ] + image_payload  # Add image URLs here
+                ] + image_payload
                 }
             ]
 

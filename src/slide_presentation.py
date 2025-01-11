@@ -59,6 +59,7 @@ def read_file_to_string(filename):
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             content = json.load(file)[0]
+            print(content)
             content = content.split("```")[1]
             content = "\n".join(content.split("\n")[1:])
             content = eval(content)
@@ -103,7 +104,7 @@ def presenter_script_generator(llm, prompt, sampling_params):
 
     messages = [
         {"role": "system", "content": SYSTEMP_PROMPT_2},
-        {"role": "user", "content": prompt + "\nResponse:\n"},
+        {"role": "user", "content": outputs + "\nResponse:\n"},
     ]
 
     outputs_refine = get_llm_outputs(llm, [messages], sampling_params)[0]
@@ -111,7 +112,7 @@ def presenter_script_generator(llm, prompt, sampling_params):
 
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("--file", type=str, required=True, description="Path to the json file containing the content before summarization")
+    argparser.add_argument("--file", type=str, required=True, help="Path to the json file containing the content before summarization")
     args = argparser.parse_args()
 
     prompt = read_file_to_string(args.file)

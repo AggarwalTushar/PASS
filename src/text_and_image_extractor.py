@@ -42,4 +42,4 @@ if __name__ == "__main__":
     argparser.add_argument("--output_dir", type=str, required=True, help="Path to the output directory")
     args = argparser.parse_args()
     extract_images_from_docx(args.input_file, os.path.join(args.output_dir, "images"))
-    extracted_text_from_docx(args.input_file)
+    extracted_text_from_docx(args.input_file, args.output_dir)

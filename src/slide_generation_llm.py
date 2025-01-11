@@ -40,7 +40,7 @@ def get_output():
     argparser.add_argument("--model", type=str, required=True, help="Model Name")
     args = argparser.parse_args()
     llm, sampling_params = init_llm(args.model)
-    with open(os.path.join(args.data_dir, "file.txt"), "r") as f:
+    with open(os.path.join(args.data_dir, "file.txt"), "r", errors = "ignore") as f:
         data = f.read()
     model = os.path.split(args.model)[1]
     if args.type == "title_generator":
