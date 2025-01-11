@@ -18,11 +18,7 @@ The architecture of PASS comprises two main modules, each divided into several s
 <img src="https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1" width="1100" />
 
 
-## Installation
-
-To use PASS, follow these steps to set up the environment and install the required dependencies.
-
-### Steps
+## Setup and Usage Instructions for PASS
 
 1. **Clone the repository:**
    ```bash
