@@ -31,14 +31,15 @@ def init_llm():
 
 
 
-def get_output():
+def main():
     global EVAL_PROMPT
     argparser = argparse.ArgumentParser()
     argparser.add_argument("--file", type=str, required=True, help="Path to the json file containing the slide content")
+    argparser.add_argument("--type", type=str, required=True, help="Redundancy, Coherence, or Relevance")
     args = argparser.parse_args()
     llm, sampling_params = init_llm()
     prompts = []
-    EVAL_PROMPT = EVAL_PROMPT[args.prompt_type]
+    EVAL_PROMPT = EVAL_PROMPT[args.type]
     with open(f"{args.file}", "r") as f:
         data = json.load(f)
     for content in data:
@@ -57,4 +58,4 @@ def get_output():
     print(f"Mean ± Standard Error: {mean_value} ± {err_value}")
 
 if __name__ == "__main__":
-    get_output()
+    main()

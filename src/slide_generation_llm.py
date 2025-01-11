@@ -32,7 +32,7 @@ def init_llm(model):
     return llm, sampling_params
 
 
-def get_output():
+def main():
     argparser = argparse.ArgumentParser()
     argparser.add_argument("--type", type=str, required=True, help="Module Type")
     argparser.add_argument("--data_dir", type=str, required=True, help="Path to the input document file")
@@ -93,5 +93,7 @@ def get_output():
                     result = get_llm_outputs(llm, [text], sampling_params)
                     results.append(result)
             with open(os.path.join(args.data_dir, "generations", model, "final_slides", f"{args.audience_type}_slides.json"), "w") as f:
-                json.dump(results, f, indent = 4)
-get_output()
+                json.dump(["\n\n".join(results)], f, indent = 4)
+
+if __name__ == "__main__":
+    main()

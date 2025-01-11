@@ -20,6 +20,6 @@ else
 fi
 
 # To map the images to the slides
-python src/image_mapper.py --data_dir $DATA_DIR --MODEL $MODEL --audience_type $AUDIENCE_TYPE
+python src/image_mapper.py --data_dir $DATA_DIR --model $MODEL --audience_type $AUDIENCE_TYPE
 
 
