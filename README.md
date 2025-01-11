@@ -15,17 +15,12 @@ PASS consists of two primary modules:
 
 The architecture of PASS comprises two main modules, each divided into several sub-modules:
 
-<img src="https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1" width="200" />
+<img src="https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1" width="500" />
 
 
 ## Installation
 
 To use PASS, follow these steps to set up the environment and install the required dependencies.
-
-### Prerequisites
-
-- Python 3.8+
-- pip (Python package installer)
 
 ### Steps
 
@@ -36,12 +31,26 @@ To use PASS, follow these steps to set up the environment and install the requir
 
 2. **Install dependencies:**
    
-    Use pip to install the required Python libraries:
+    Use env.yml to create a conda environment:
    ```bash
-   pip install -r requirements.txt
+   conda env create -f env.yml
+   conda activate pass
+   
+3. **Execute Slide Generation Module:**
+   Add your model, doc file path and audience(technical/non-technical) details in the src/run.sh file. Use the following command to run the file:
+   ```bash
+   bash src/run.sh
+   
+4. **Execute Slide Presentation Module:**
+   ```bash
+   python src/slide_presentation.py --file <Path to the json file containing the content before summarization - ({OUTPUT_DIR}/generations/{model}/content/{AUDIENCE_TYPE)_slide_content.json)>
+   
+5. **Slides Evaluation:**
+   ```bash
+   python src/eval.py --file <Path to the json file containing the generated slides - ({OUTPUT_DIR}/generations/{model}/content/{AUDIENCE_TYPE)_slides.json)> --type <Redundancy, Relevance, Coherence>
 
 ## Paper
-The detailed paper describing PASS, its architecture, and evaluation results can be found here (replace with actual link).
+The detailed paper describing PASS, its architecture, and evaluation results can be found here.
 
 ## Citation
 If you use **PASS** in your research or projects, please cite the following paper:
