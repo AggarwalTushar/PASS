@@ -15,27 +15,41 @@ PASS consists of two primary modules:
 
 The architecture of PASS comprises two main modules, each divided into several sub-modules:
 
-![image](https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1)
+<img src="![image](https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1)" width="200" />
 
-
-### Slide Generation
-
-- **Image and Text Extractor**: Separates text and images in the document.
-- **Title Generator**: Generates slide titles based on the document content.
-- **Content Extractor**: Extracts the most relevant content for each slide.
-- **Summarizer**: Condenses extracted content into concise points for slides.
-- **Image Mapping**: Maps relevant images to corresponding slides.
-
-### Slide Presentation
-
-- **Presenter Script Generator**: Generates the script for each slide.
-- **Audio Generation**: Converts the script into speech using an AI-based Text-to-Speech model (Tacotron-2).
 
 ## Installation
 
-To install and run PASS locally, follow these steps:
+To use PASS, follow these steps to set up the environment and install the required dependencies.
 
-1. **Clone the repository**:
+### Prerequisites
+
+- Python 3.8+
+- pip (Python package installer)
+
+### Steps
+
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/AggarwalTushar/PASS.git
    cd PASS
+
+2. **Install dependencies:**
+   
+    Use pip to install the required Python libraries:
+   ```bash
+   pip install -r requirements.txt
+
+## Paper
+The detailed paper describing PASS, its architecture, and evaluation results can be found here (replace with actual link).
+
+## Citation
+If you use **PASS** in your research or projects, please cite the following paper:
+
+```bash
+@article{aggarwal2025pass,
+  title={PASS: A Pipeline for Automated Presentation Generation and Delivery},
+  author={Tushar Aggarwal, Aarohi Bhand},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2025}
+}
