@@ -15,7 +15,7 @@ PASS consists of two primary modules:
 
 The architecture of PASS comprises two main modules, each divided into several sub-modules:
 
-<img src="https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1" width="500" />
+<img src="https://github.com/user-attachments/assets/910fc4a9-a76c-427b-81d9-55156eaa91a1" width="1100" />
 
 
 ## Installation
