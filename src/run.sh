@@ -1,7 +1,7 @@
 MODEL=""
-DATA_DIR="data"
-INPUT_FILE="input.txt"
-AUDIENCE_TYPE="technical"
+DATA_DIR=""
+INPUT_FILE=""
+AUDIENCE_TYPE="<technical/non_technical>"
 
 
 # Extract text and images from the input file
