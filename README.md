@@ -46,15 +46,18 @@ The architecture of PASS comprises two main modules, each divided into several s
    python src/eval.py --file <Path to the json file containing the generated slides - ({OUTPUT_DIR}/generations/{model}/content/{AUDIENCE_TYPE)_slides.json)> --type <Redundancy, Relevance, Coherence>
 
 ## Paper
-The detailed paper describing PASS, its architecture, and evaluation results can be found here.
+The detailed paper describing PASS, its architecture, and evaluation results can be found here: [PASS](https://arxiv.org/abs/2501.06497)
 
 ## Citation
 If you use **PASS** in your research or projects, please cite the following paper:
 
 ```bash
-@article{aggarwal2025pass,
-  title={PASS: A Pipeline for Automated Presentation Generation and Delivery},
-  author={Tushar Aggarwal, Aarohi Bhand},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2025}
+@misc{aggarwal2025passpresentationautomationslide,
+      title={PASS: Presentation Automation for Slide Generation and Speech}, 
+      author={Tushar Aggarwal and Aarohi Bhand},
+      year={2025},
+      eprint={2501.06497},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2501.06497}, 
 }
